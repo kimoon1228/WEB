@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #id_disp{
+            border: 1px solid gold;
+        }
+    </style>
+</head>
+<body>
+    <div id = "id_disp"></div>
+    메세지 <input id = "id_txt" type="text" value=""><br>
+    <input id = "id_btn" type="button" value="전달">
+    <input type="button" value="창닫기" onclick="f_close()">
+   
+    <script>
+        function f_close(){
+            opener.f_close();
+            opener.v_newwin=null;
+
+            // window.close();
+        }
+        var v_btn = document.getElementById("id_btn");
+        var v_txt = document.getElementById("id_txt");
+        function f_clk(){
+            // 열린 윈도우는 넘겨받은 값이 없어서 누가 열어 주었는지 개발자는 알수 없다.
+            // 준비된 키워드 opener 
+            opener.document.getElementById("id_txt1").value= v_txt.value;
+            opener.document.getElementById("id_disp").innerHTML += v_txt.value; 
+        }
+        v_btn.onclick= f_clk
+    </script>
+</body>
+</html>

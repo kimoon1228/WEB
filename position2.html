@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border: 2px solid black;
+        }
+        .ssw{
+            /* 부모가 relative이고 자식이 absolute일때 자식의 좌표기준점이
+                부모의 왼쪽 상단 모서리로 바뀜
+                레이아웃 잡을 때 기본은 일단 static으로 대략 모양을 만든 다음에 
+                relative 나 absolute를 사용하는 것임
+                처음부터 relative나 absolute를 사용하면 뒷감당이 안됨
+            */
+            position: absolute;
+            height: 30px;
+            border: 2px solid pink;
+        }
+        .special{
+            top:30px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>장두언</div>
+    <!-- 태그 안에 태그를 표현할 때 바깥 태그 부모(parent), 안쪽태그 자식(child) 
+        자식의 자식 자손
+    -->
+    <div>
+        <div class= "ssw">정찬웅</div>
+        <div class= "ssw special">사승원</div>
+        <div class= "ssw">송인범</div>
+        <div class= "ssw">염호준</div>
+    </div>
+    <div>잘하네요</div>
+</body>
+</html>

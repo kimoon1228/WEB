@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<script>
+    // 함수안의 코드를 보고 매개변수 타입을 짐작해야함
+    // 함수의 매개변수 타입으로 숫자,문자열, 배열, JSON ,함수
+    // 함수의 retrun 타입도 숫자 , 문자열, 배열, JSON, 함수 뭐든 와도 됨
+    // 함수안에 함수가 와도 된다. 안에 있는 함수는 밖에서 따로 부를수 없다.
+    function f_cal(p_op){ // 사칙연산별 초간단  함수 리턴
+        function f_add(p_a,p_b){
+            return p_a+p_b;
+        }
+        function f_sub(p_a,p_b){
+            return p_a-p_b;
+        }
+        function f_mul(p_a,p_b){
+            return p_a*p_b;
+        }
+        function f_div(p_a,p_b){
+            return p_a/p_b;
+        }
+    if(p_op == "+"){
+        return f_add
+    }if(p_op == "-"){
+        return f_sub
+    }if(p_op == "x"){
+        return f_mul
+    }if(p_op == "/"){
+        return f_div
+    }
+}        
+
+alert(f_cal("+")(100,200));
+alert(f_cal("-")(100,200));
+alert(f_cal("x")(100,200));
+alert(f_cal("/")(100,200));
+</script>

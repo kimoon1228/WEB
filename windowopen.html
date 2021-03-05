@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #id_disp{
+            border: 1px solid gold;
+        }
+    </style>
+</head>
+<body>
+    <div id = "id_disp"> </div>
+    <input id="id_btn" type="button" value="새창열기"><br>
+    메세지<input id= "id_txt1" type="text" value=""><br>
+    <input id= "id_btn1" type="button" value="전달">
+    <input type="button" value="창닫기" onclick="f_close()">
+    <script>
+         function f_close(){ // 스크립트로 열어진 창만 닫을 수 있다.
+            window.close();
+        }
+        var v_btn1 = document.getElementById("id_btn1");
+        var v_txt1 = document.getElementById("id_txt1");
+        v_btn1.onclick = function(){
+            if(!v_newwin){
+                alert("바보양");
+                return;
+            }
+            v_newwin.document.getElementById("id_txt").value = v_txt1.value;
+            v_newwin.document.getElementById("id_disp").innerHTML += v_txt1.value;
+        }
+
+    
+        var v_btn = document.getElementById("id_btn");
+        var v_newwin =null;
+        v_btn.onclick = function(){
+            v_newwin = window.open("newWin.html","ibs","width=200,height=200, left=100, top=100")
+                    // (열려고하는 페이지, window의 name파라미터, 열려고하는페이지의 사이즈)
+            // 두번째 파라미터는 이미 그이름으로 열린 윈도우가 있으면 그 윈도우로 감(더이상 열리지 않음)
+            // 사이즈는 마이너스 값이 올수가 없다
+            // 리턴값은 새창을 가리킨다.
+        }
+    </script>
+</body>
+</html>

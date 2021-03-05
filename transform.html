@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #id_img{
+            width:200px;
+            height: 200px;
+            background-image: url("images/images\ \(8\).jpeg");
+            background-size: 200px 200px;
+            /*border-radius: 100px; /*둥글게 만드는 속성 width height 절반 값만 주면 둥글게 된다.*/
+            /* transform: rotateX(55deg); rotateX-- X축  rotateY Y축 rotateZ ==rotate 시계방향 */
+            transform-origin: center top; /*움직임의 기본점 defalut(center center)*/
+            /* transform: translateX(100px) translateY(200px); */
+            transform: skewY(87deg); /*뒤틀리다*/
+            border: 10px solid black
+        }
+    </style>
+</head>
+<body>
+    <div id = "id_img"></div>
+        <input type="button" value="돌리기" onclick="f_rot()">
+        <script>
+            var v_gak = 0; // 초기 각도 값 0
+            var v_gakinc = 10; // 증가 값 10
+            var v_img = document.getElementById("id_img");
+            function f_rot() {
+                v_gak = (v_gak + v_gakinc) % 360 ; // 360이 넘어가면 버린다 
+                v_img.style.transform="rotate("+v_gak+"deg)"
+                setTimeout(f_rot,200)
+            }
+        </script>
+</body>
+</html>

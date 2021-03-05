@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>시험</h1>
+    <input type ="hidden" id= "id_random" value="">
+   <script>
+       var v_munjesu = 5; // 문제 출력수
+       var v_cnt = 5; // 선택지
+       var v_dap =[]; // 정답 배열
+       for(var i=0; i<v_munjesu; i++){
+           v_dap[v_dap.length] = Math.ceil(Math.random()*4);// 0~4사이
+       }
+       document.getElementById("id_random").value = v_dap;
+       for(var j=1; j<=v_munjesu; j++){
+        document.write("문제"+j+"<hr>")
+       for(var i=1; i<=v_cnt; i++){
+           document.write(i+"<input type=radio name=munje"+j+" value ="+i+">");
+       }
+document.write("<br><br>")
+    }
+   </script>
+   점수<input type="text" id="id_disp" value="" size = "5">
+   <input type="button" value="채점" onclick="f_test()">
+   <script>
+       var v_disp = document.getElementById("id_disp")
+       function f_test() {
+           var v_userdap= []; // 사용자 답을 담을 빈 배열
+           for(var i=1; i<=v_munjesu; i++){
+                var v_ckdap = document.getElementsByName("munje"+i) // 라디오 버튼 이름 구하기(배열로 리턴)
+                for(var j =0; j<v_ckdap.length; j++){             
+                    if(v_ckdap[j].checked){    // 사용자가 입력한 값을 구해 배열에 담기
+                        v_userdap[v_userdap.length] = v_ckdap[j].value;
+                        break; // 답을 담으면 다음으로
+                    }
+                }
+           }
+           // 답을 체크 하지 않앗을 경우
+           if(v_userdap.length != v_munjesu){
+               alert("정답을 확인 바랍니다.")
+               return;
+           }
+           // 사용자 입력값과 정답값과 체크 맞으면 카운트 증가
+           var v_jungcnt = 0;
+           for(var i= 0; i<v_munjesu; i++){
+               if(v_userdap[i]== v_dap[i]){
+                   v_jungcnt++;
+                }
+            }
+            //점수 출력
+            v_disp.value = (v_jungcnt/v_munjesu)*100
+       }
+   </script>
+</body>
+</html>

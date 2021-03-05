@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 체크박스는 사용자게에 여러개 선택을 요구할 때, 취미, 관심분야등. -->
+    당신의 보유 스킬을 선택 해주세요(다중선택 3개만 가능)<br>
+    자바<input type="checkbox" name = "nm_skill" value="java" onclick="f_ckbox(0)">
+    HTML<input type="checkbox" name = "nm_skill" value="html"onclick="f_ckbox(1)">
+    CSS<input type="checkbox" name = "nm_skill" value="css"onclick="f_ckbox(2)">
+    JS<input type="checkbox" name = "nm_skill" value="js"onclick="f_ckbox(3)">
+    SQL<input type="checkbox" name = "nm_skill" value="sql"onclick="f_ckbox(4)"><br>
+    <input type="button" value="체크된값 확인" onclick="f_ckbox()">
+    <script>
+        var v_skills =document.getElementsByName("nm_skill");
+        // console.log(v_skills[3])
+        function f_ckbox(p_num) {
+            var v_cnt = 0;
+            var v_rlst = []; // 결과를 담을 빈 배열
+            for(var i=0;i<v_skills.length; i++){
+                if(v_skills[i].checked)
+                v_cnt++; // 카운트 증가
+                v_rlst[v_rlst.length]=v_skills[i].value;
+            }
+            if(v_cnt>3){
+                alert("죄송합니다. 3개까지만 선택해주세요");
+                v_skills[p_num].checked= false; // 체크박스 강제 해제
+                
+            }
+            // alert("당신이 체크하신 값은" + v_rlst+"입니다");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>아이디</td>
+            <td><input id ="id_text" type="text" value=""></td>
+        </tr>
+        <tr>
+            <td>암호</td>
+            <td><input id ="id_pass" type="password" value=""></td>
+        </tr>
+        <tr>
+            <td>성별</td>
+            <td>
+                남<input type="radio" name = "nm_ra" value="m">
+                여<input type="radio" name = "nm_ra" value="f">
+            </td>
+        </tr>
+        <tr>
+            <td>성별</td>
+            <td>
+                자바<input type="checkbox" name = "nm_ck" value="java">
+                자바스크립트<input type="checkbox" name = "nm_ck"value="js">
+                SQL<input type="checkbox" name = "nm_ck" value="sql">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><textarea id= "id_ta" cols="30" rows="10" readonly></textarea></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="button" value="확인" onclick="f_click()"></td>
+        </tr>
+    </table>
+    <script>
+        // id 변수 선언
+        var v_id =document.getElementById("id_text").value;
+        var v_pass = document.getElementById("id_pass").value;
+        var v_ra = document.getElementsByName("nm_ra");
+        var v_ck = document.getElementsByName("nm_ck");
+        
+
+        var v_str="";
+
+        // 라디오 함수
+          function f_ra() {
+           var v_msg = "당신은";
+           for(var i= 0; i<v_ra.length; i++){ 
+            if(v_ra[i].checked){
+                if(v_ra[i].value=="m"){
+                    v_msg += "남자이며";
+                }else{
+                    v_msg += "여자이며";
+                }
+                break;
+            }     
+           }
+            return v_msg;
+        }
+
+        // 체크박스 함수
+        function f_ck() {
+            var v_rlst = []; // 결과를 담을 빈 배열
+            for(var i=0;i<v_ck.length; i++){
+                if(v_ck[i].checked)
+                v_rlst[v_rlst.length]=v_ck[i].value;
+                // length 차곡차곡 배열에 값을 담을수 있다.
+            }
+            return v_rlst
+        }
+  
+        function f_click(){
+            v_str = "당신의 아이디는"+ v_id +" \n\n패스워드는"+v_pass+"이며\n\n"+f_ra()+"\n\n취미는"+f_ck()+"입니다."
+            document.getElementById("id_ta").value= v_str;
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 체크박스는 사용자게에 여러개 선택을 요구할 때, 취미, 관심분야등. -->
+    당신의 보유 스킬을 선택 해주세요(다중선택 3개만 가능)<br>
+
+    자바<input type="checkbox" name = "nm_skill" value="java" onclick="f_ckbox(this)">
+    HTML<input type="checkbox" name = "nm_skill" value="html"onclick="f_ckbox(this)">
+    CSS<input type="checkbox" name = "nm_skill" value="css"onclick="f_ckbox(this)">
+    JS<input type="checkbox" name = "nm_skill" value="js"onclick="f_ckbox(this)">
+    SQL<input type="checkbox" name = "nm_skill" value="sql"onclick="f_ckbox(this)"><br>
+    <input type="button" value="체크된값 확인" onclick="f_ckbox()">
+
+    <script>
+       // var v_skills =document.getElementsByName("nm_skill");
+        var v_cnt = 0; // 초기 카운트 값 0
+
+        function f_ckbox(p_this) {
+           // console.log(p_this)
+
+          if(p_this.checked){
+              v_cnt++;
+          }else{
+              v_cnt--;
+          }
+
+          if(v_cnt >3){
+              alert("3개만 하라고...")
+              p_this.checked = false; // 강제 해제
+                v_cnt--;
+          }
+
+        }
+    </script>
+</body>
+</html>

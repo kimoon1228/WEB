@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 입력 태그</title>
+</head>
+<body>
+    <input type="file"> <br>
+        <input type="button" value=" 버튼을 눌러주세용"><br>
+        <input type="text" value="텍스트 상자"><br>
+        <input type="hidden" value="보이지 않아 아무도">
+        <!-- radio 버튼은 name이 같은 것 중에 오직 1개만 체크 가능 -->
+        남<input type="radio" name="sb" value="male">
+        여<input type="radio" name="sb" value="female"><br>
+
+        <!-- checkbox 버튼도 name으로 묶을수 있으며 중복 선택이 가능 -->
+        보유하신 스킬을 체크하세요(여러개 가능)<br>
+        자바<input type="checkbox"name="skill" value="java">
+        SQL<input type="checkbox" name="skill"value="sql">
+        HTML<input type="checkbox" name="skill"value="html">
+        CSS<input type="checkbox" name="skill"value="css"><br>
+
+        <!-- select -->
+        <select name="" id="">
+            <option value="who">누구 좋아하세요?</option>
+            <option value="kjh">김주헌</option>
+            <option value="jcw">정찬웅</option>
+            <option value="hms">황미선</option>
+            <option value="ssw" selected>사승원</option>
+        </select>
+
+        <textarea  cols="30" rows="20">여러줄을 입력 할때 사용 합니다.</textarea>
+
+        <input type="color" value=""><br>
+        <input type="date"><br>
+        <input type="range">
+        <input type="number" value = "4">
+        <!-- 
+            기능이 괜찮아도 브라우져마다 보이는게 다른 컴포넌트는 잘 사용 하지 않는다.
+            상업적인 사이트에서는 더욱 더 
+         -->
+</body>
+</html>

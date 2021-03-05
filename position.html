@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black; /* 레이아웃 잡을 땐 항상 이게 있으면 도움 됨 */
+        }
+        #kjw{
+            /* position: static;  기본값 브라우져가 알아서 해라 , 움직이지 않음*/
+            /*position: relative;*/
+            /* static으로 자리잡고 나서 그 지점에서 설정한 값 만큼 움직임 */
+            position: absolute;
+            /* 브라우져 화면 왼쪽 상단 모서리 기준으로 움직임(레이어가 붕뜸) */
+            left: 300px;
+            top:100px
+        }
+    </style>
+</head>
+<body>
+    <div>안녕1</div>
+    <div id ="kjw">안녕2</div>
+    <div>안녕3</div>
+</body>
+</html>

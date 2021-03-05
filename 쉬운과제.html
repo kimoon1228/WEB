@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<script>
+    var v_aa = 33;
+    var v_bb = 77;
+    // 두 변수값 체인지(swap)
+    // 가장 일반적인 방법(임시 변수 사용)
+    var v_temp;
+    
+    alert("v_aa:"+v_aa+"v_bb:"+v_bb)
+    /*
+    v_temp = v_aa;
+    v_aa = v_bb;
+    v_bb= v_temp;
+    */
+    // 과제 : 추가 변수 선언 없이 산술 연산만을 이용해서 두 변수 값을 바꾸시오
+    v_aa = v_aa+v_bb
+    v_bb = v_aa-v_bb
+    v_aa = v_aa-v_bb 
+
+    alert("v_aa:"+v_aa+"v_bb:"+v_bb)
+
+</script>

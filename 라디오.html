@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #id_disp{
+            height: 200px;
+            border : 3px groove black
+        }
+    </style>
+</head>
+<body>
+    <!-- 여러개 중에 오직 한개만 선택 가능하게 만들때 사용
+         name속성에 같은 값을 주면 그룹으로 묶임 , 그룹중에 오직 1개만 선택 가능
+    -->
+    <div id = "id_disp"></div>
+    남<input type="radio" name = "nm_sb"value="male">
+    여<input type="radio" name = "nm_sb"value="female" >
+    <hr>
+    내국인<input type="radio" name = "nm_na"value="kor">
+    외국인<input type="radio" name = "nm_na"value="for"><br>
+    <input type="button" value="눌러" onclick="f_check()">
+    <script>
+        var v_disp =document.getElementById("id_disp");
+        var v_sb = document.getElementsByName("nm_sb"); // 배열을 리턴 해준다고 생각
+        var v_na = document.getElementsByName("nm_na");
+        // console.log(v_sb[0]);
+
+       var f_check = function () {
+           var v_msg = "당신은";
+           for(var i= 0; i<v_sb.length; i++){
+            //  체크된 것 확인 checked 속성이 true   
+            if(v_sb[i].checked){
+                // alert ("당신의 선택은 "+ v_sb[i].value)
+                if(v_sb[i].value=="mail"){
+                    v_msg += "남자이며";
+                }else{
+                    v_msg += "여자이며";
+                }
+                break;
+            }
+        }
+           for(var i= 0; i<v_na.length; i++){
+            //  체크된 것 확인 checked 속성이 true   
+            if(v_na[i].checked){
+                if(v_sb[i].value=="kor"){
+                    v_msg += "내국인입니다";
+                }else{
+                    v_msg += "외국인입니다";
+                }
+                break;
+            }
+        }
+           v_disp.innerHTML="<h1>"+v_msg+"</h1>"
+       }
+    </script>
+    
+</body>
+</html>

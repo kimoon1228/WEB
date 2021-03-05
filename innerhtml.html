@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #id_disp{
+            width: 400px;
+            height: 400px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id = "id_disp"> </div>
+    <h1 id = "id_h1"></h1>
+    <input type="button" value= "누름" onclick="f_wrt()">
+    <script>
+        var v_disp = document.getElementById("id_disp");
+        var v_h1 = document.getElementById("id_h1");
+        function f_wrt(){
+            v_disp.innerHTML += "<h1>토레타~</h1>"
+            v_h1.innerHTML = "난 최고의 프로그래머당"
+        }
+    </script>
+</body>
+</html>

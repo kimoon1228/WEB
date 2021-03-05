@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #id_parent{
+            position: relative;
+            left:300px;
+            top : 100px;
+            border: 5px solid blueviolet;
+            width: 150px;
+            height: 150px;
+          overflow: hidden; /*hidden 부모영역을 벗어난 자식 감추기, scroll 부모영역을 벗어난 것을 스크롤 바를 만들어 표시, auto 알아서 부모영역을 벗어난걸 스크롤바로 만들어줌*/
+        }
+        .cl_cild{
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+        }
+        #id_row1,#id_row2{
+            position: absolute; /* static은 움직이지 않음(기본값)*/ 
+            width:  620px;
+            height: 150px;
+            border: 1px solid black;
+
+        }
+        #id_row2{
+            left : 620px;
+        }
+    </style>
+</head>
+<body>
+    <div id = "id_parent">
+        <div id= "id_row1">
+        <div class="cl_cild">
+            <img src="./images/a.jpeg" width="150px" height="150px">
+        </div>
+        <div class="cl_cild">
+            <img src="./images/b.jpeg" width="150px" height="150px">
+        </div>
+        <div class="cl_cild">
+            <img src="./images/c.jpg" width="150px" height="150px">
+        </div>
+        <div class="cl_cild">
+            <img src="./images/d.jpg" width="150px" height="150px">
+        </div>
+        </div>
+        <div id= "id_row2">
+            <div class="cl_cild">
+                <img src="./images/images (1).jpeg" width="150px" height="150px">
+            </div>
+            <div class="cl_cild">
+                <img src="./images/images (2).jpeg" width="150px" height="150px">
+            </div>
+            <div class="cl_cild">
+                <img src="./images/images (3).jpeg" width="150px" height="150px">
+            </div>
+            <div class="cl_cild">
+                <img src="./images/images.jpeg" width="150px" height="150px">
+            </div>
+            </div>
+    </div>
+    <input type="button" value="움직이기" onclick="f_move()">
+    <script>
+        var v_row1 = document.getElementById("id_row1");
+        var v_row2 = document.getElementById("id_row2");
+        function  f_move() {
+            if(!v_row1.style.left){ //v_row.style.left -- 설정해놓은 left값이 없기에 문자열 공백이 리턴되는데 if문에서의 문자열 공백은 false값
+                v_row1.style.left = "0px";
+                v_row2.style.left = "620px";
+            }
+            v_row1.style.left = parseInt(v_row1.style.left) -10 +"px";
+            v_row2.style.left = parseInt(v_row2.style.left) -10 +"px";
+            if(parseInt(v_row1.style.left) <= -620){
+                v_row1.style.left = "621px";
+            }
+            if(parseInt(v_row2.style.left) <= -620){
+                v_row2.style.left = "621px";
+            }
+            setTimeout(f_move,100);
+        }
+    
+    </script>
+</body>
+</html>

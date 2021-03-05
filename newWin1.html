@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    메세지 <input id = "id_txt" type="text" value=""><br>
+    <input id = "id_btn" type="button" value="전달">
+    <input type="button" value="새창" onclick="f_new()">
+   
+    <script>
+        function f_new(){
+            window.open("newWin2.html","aaa","width=200,height=200,left=100")
+        }
+        var v_btn = document.getElementById("id_btn");
+        var v_txt = document.getElementById("id_txt");
+        function f_clk(){
+            // 부모 키워드 parent  
+           parent.frames[2].document.getElementById("id_txt").value = v_txt.value;
+        }
+        v_btn.onclick= f_clk
+    </script>
+</body>
+</html>

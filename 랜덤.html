@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<script>
+    //원래 지원되는(built-in) Math객체
+    //Ranbom
+    /*
+    for (var i=1; i<=10; i++){
+        alert(Math.random()); // 0 <= x <1
+    };
+    */
+//    alert(Math.ceil(0.1)); // 올림
+//    alert(Math.floor(0.9)); // 내림
+//    alert(Math.round(0.5)); // 반올림
+    // 질문 1~100 사이의 랜덤한 숫자를 발생 시키려면 
+  /*  for (var i=1; i<=10; i++){
+        alert(Math.round(Math.random()*45)+55); // 0 <= x <1
+    };
+*/
+    function f_ran(p_start,p_end){
+        return Math.round(Math.random()*(p_end-p_start))+p_start;
+    }
+
+    for(var i= 1; i<=10; i++){
+        console.log(f_ran(65,111));
+    }
+</script>

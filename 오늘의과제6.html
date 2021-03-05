@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #id_yhj{
+            width: 200px;
+            height: 200px;
+            background-image: url(./images/images\ \(10\).jpeg);
+            background-size: 200px 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id = "id_yhj"></div>
+    <script>
+        // onload, onresize, innerwidth, innerheight를 이용해서 이미지가 항상 화면 가운데 있도록 해봅니다.
+        // 브라우져를 사이즈를 변경해도 가운데 있는다.
+        var v_idW = 200;
+        var v_idH = 200;
+        var v_id = document.getElementById("id_yhj");
+        var v_wid = (window.innerWidth - v_idW)/2
+        var v_hei = (window.innerHeight - v_idH)/2
+
+        window.onload= function(){
+         v_id.style.marginLeft= v_wid+"px"
+         v_id.style.marginTop= v_hei+"px"
+        }
+
+        window.onresize= function(){
+         v_wid = (window.innerWidth - v_idW)/2
+         v_hei = (window.innerHeight - v_idH)/2
+         v_id.style.marginLeft= v_wid+"px"
+         v_id.style.marginTop= v_hei+"px"
+        }
+      
+
+    </script>
+</body>
+</html>

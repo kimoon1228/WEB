@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재귀호출</title>
+    <style>
+        #id_disp{
+            height: 50px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id ="id_disp"></div>
+    <input type="button" value="눌렁" onclick="f_ck()">
+    <script>
+        // 1~특정 숫자까지 합을 구하는 함수
+        var v_id = document.getElementById("id_disp")
+        function f_sum(p_num) {
+            if(p_num==1){
+                return 1;
+            }
+          return p_num*f_sum(p_num-1) // 자신속에서 자신을 부름 구조가 무한루핑 이다보니 종료조건을 먼저 생각해야 한다.     
+        }               
+        /*  
+            f_sum(4) -- > 4+ f_sum(3)
+                            +3+f_sum(2)
+                                +2+f_sum(1)
+                                    +1
+        */
+       var v_i =1;
+       function f_ngm() {
+           alert(v_i+"번째"+ "기문 안녕");
+            v_i++;
+           setTimeout(f_ngm,500); // 재귀호출로 많이 사용됨
+       }
+        function f_ck() {
+            setTimeout(f_ngm,500);
+            // v_id.innerHTML = "팩토리알 5"+ f_sum(5);
+        }
+        /*
+        function f_sum(p_num) {
+          var v_sum= 0;
+            for (let i = 0; i < p_num; i++) {
+                v_sum+=i;
+            }
+            return "1부터"+p_num +"까지 합은" + v_sum;
+        }
+        */
+    </script>
+</body>
+</html>

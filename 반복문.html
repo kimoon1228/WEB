@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script>
+    // 반복문 -> 개발자에겐 필수
+//    for(초기치;조건;증감식){
+ //   }
+ /*
+    var i = 1;
+    for(;"주영흔";){
+        alert("무한루핑");
+        //빠져 나갈 조건
+        i++;
+        if(i>10){
+            alert("루핑 끝~")
+            break;
+        }
+    }
+*/
+    // for문 일반적 사용법
+    var v_arr = ["김주헌","정찬웅","주영흔","윤가영"];
+    for(var i=0; i< v_arr.length; i++){
+        if(i==2){
+            continue;
+        }
+        alert("이름:"+ v_arr[i]);
+    }
+
+    //while 문
+    var i = 0;
+    while(i<v_arr.length){
+        if(i==2){
+            i++; // 이게 없으면 무한 루핑
+            continue; // 아래  block 스킵 , for->증감식, while-> 조건으로
+        }
+        alert("이름 :" +v_arr[i]);
+        i++;
+    }
+</script>

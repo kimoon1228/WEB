@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea  id="id_ta" cols="30" rows="10">
+        이건 여러줄 입력 하는것이라
+    </textarea>
+    <input type="button" value="눌러방" onclick="f_ck()">
+    <script>
+        function f_ck(){
+            alert(document.getElementById("id_ta").value);
+        }
+    </script>
+</body>
+</html>

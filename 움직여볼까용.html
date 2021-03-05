@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #kjw{
+            position: absolute; /* 움직이려면 부모가 ralative 자식이 absolute*/
+            width: 100px;
+            height: 100px;
+            background-color: cornflowerblue;
+            top:150px;
+            left: 100px;
+            border-radius: 50px; /* 모서리를 둥글게*/
+            background-image: url("./images/b.jpeg");
+            background-size: 100px 100px;
+        }
+        .cl_bar{
+            position: absolute;
+            width: 100px;
+            left: 700px;
+            height: 100vh; /* 높이 꽉차게*/
+            background-color: pink;
+        }
+        .cl_bar2{
+            position: absolute;
+            width: 100vw; /* 넓이를 꽉차게 */
+            height: 100px; 
+            top :500px;
+            background-color: pink;
+        }
+        /*  inline style 값이 내부 style 값보다 우선순위가 높음 */
+    </style>
+</head>
+<body>
+    <div class= "cl_bar"> 기둥</div>
+    <div class= "cl_bar2"> 기둥</div>
+    <div id ="kjw"></div>
+    <input type="button" value="가다" onclick="f_ygy()">
+    <input type="button" value="그만 가다" onclick="f_stop()">
+    <script>
+        var v_kjw = document.getElementById("kjw");
+        var v_bar = document.getElementsByClassName("cl_bar");
+        var v_mvR = 10; // 움직이는 폭
+        var v_mvt = 10; // 움직이는 상하
+        var v_timer;
+        var v_run = false; // flag 변수..
+
+        function f_ygy() { // proxy 디자인 패턴(대리인)
+            if(!v_run){
+                f_move();
+                v_run = ture;
+            }
+        }
+        function f_stop() {
+            //clearTimeout <-> setTimeout 
+            clearTimeout(v_timer); // 타이머 변수를 없앤다
+        }
+        function  f_move() {
+            if(!v_kjw.style.left){ // left 속성이 inline에 정의되어 있지 않다면 
+                v_kjw.style.left = "100px"; // 초기값 설정, 절대 단위를 빼먹으면 안됨
+                v_kjw.style.top = "150px";
+            }
+           //alret(parseInt(v_kjw.style.left));
+           v_kjw.style.transform = "skewX(0deg) skewY(0deg)"
+             v_kjw.style.left = parseInt(v_kjw.style.left)+v_mvR +"px";
+             v_kjw.style.top = parseInt(v_kjw.style.top)+v_mvt +"px";
+             var v_left = parseInt(v_kjw.style.left);
+             var v_right = v_left+100;
+             var v_top = parseInt(v_kjw.style.top)
+             var v_bottom = v_top+100;
+            //  좌우
+             if(v_right>=700||v_left<=0){
+                v_mvR= -v_mvR;
+                v_kjw.style.transform = "skewX(45deg)"
+             }
+            //  상하
+             if(v_bottom>=500||v_top<=0){
+                v_kjw.style.transform = "skewY(45deg)"
+                v_mvt= -v_mvt;
+             }
+             v_timer = setTimeout(f_move,50); // 500ms 마다 f_move를 호출
+        }
+
+    </script>
+</body>
+</html>

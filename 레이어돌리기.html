@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            position: relative;
+            top :50px;
+            margin: 0 auto; /* 수평  정렬*/
+            width: 220px;
+            height: 340px;
+            border: 1px solid black;;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+        .cl_layer{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="<" onclick="f_free()">
+    <input id ="id_txt" type="text" size="6" value="" >
+    <input type="button" value=">" onclick="f_next()">
+    <div id = "container">
+        <div class="cl_layer" style="z-index: 100;"> 
+            <!-- 인라인 z-index -->
+            <table border="2">
+                <tr>
+                    <td><img src="./images/images (1).jpeg" alt=""></td>
+                    <td><img src="./images/images (2).jpeg" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="./images/images (3).jpeg" alt=""></td>
+                    <td><img src="./images/images (4).jpeg" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="./images/images (5).jpeg" alt=""></td>
+                    <td><img src="./images/images (6).jpeg" alt=""></td>
+                </tr>
+            </table>
+        </div>
+        <div class="cl_layer">
+            <table border="2">
+                <tr>
+                    <td><img src="./images/images (7).jpeg" alt=""></td>
+                    <td><img src="./images/images (8).jpeg" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="./images/images (9).jpeg" alt=""></td>
+                    <td><img src="./images/images (10).jpeg" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="./images/images.jpeg" alt=""></td>
+                    <td><img src="./images/img.jpg" alt=""></td>
+                </tr>
+            </table>
+        </div>
+        <div class="cl_layer">
+            <table border="2">
+                <tr>
+                    <td><img src="./images/pepe.jpg" alt=""></td>
+                    <td><img src="./images/purin.jpeg" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="./images/a.jpeg" alt=""></td>
+                    <td><img src="./images/b.jpeg" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="./images/d.jpg" alt=""></td>
+                    <td><img src="./images/images (11).jpeg" alt=""></td>
+                </tr>
+            </table>
+        </div>
+        <div class="cl_layer">
+            <table border="2">
+                <tr>
+                    <td><img src="./images/images (12).jpeg" alt=""></td>
+                    <td><img src="./images/images (13).jpeg" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="./images/images (14).jpeg" alt=""></td>
+                    <td><img src="./images/images (15).jpeg" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="./images/images (16).jpeg" alt=""></td>
+                    <td><img src="./images/images (17).jpeg" alt=""></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        var v_layers = document.getElementsByClassName("cl_layer");
+        var v_index = 0; // 레이어 초기값, 첫번째 레이어를 맨 위로 올려논 상태
+        var v_txt = document.getElementById("id_txt");
+        v_txt.value= (v_index+1)+"/"+v_layers.length
+        var v_top = 0; //현재 맨위의 레이어의 index값을 저장하는 변수
+        // console.log(v_layers[2]);
+        function f_init() {
+            for (var i= 0; i < v_layers.length; i++){
+                v_layers[i].style.zIndex = 1; // 모든 레이어 zIndex 값을 초기화           
+            }
+            
+        }
+        function f_next() {
+            // f_init();
+            v_index++;
+            if(v_index>v_layers.length-1){
+                v_index = 0;
+            }
+            v_layers
+            v_txt.value= (v_index+1)+"/"+v_layers.length;
+            v_layers[v_top].style.zIndex = 1;
+            v_layers[v_index].style.zIndex = "1000";
+            v_top = v_index;
+        }
+
+        function f_free() {
+            // f_init();
+            v_index--;
+            if(v_index<0){
+                v_index = v_layers.length-1 ; // 배열의 마지막 인덱스로
+            }
+            v_txt.value= (v_index+1)+"/"+v_layers.length;
+            v_layers[v_top].style.zIndex = 1;
+            v_layers[v_index].style.zIndex = "1000";
+            v_top = v_index;
+        }
+    </script>
+</body>
+</html>

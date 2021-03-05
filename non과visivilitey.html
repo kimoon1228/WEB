@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #id_disp{
+            /* 공간도 차지하지 않고 눈에도 보이지 않음 */
+            /* display: none; */
+            /* visibility: hidden; hidden 내용이 보이지 않지만 공간은 차지 visible 기본값 내용이 보임 */
+        }
+    </style>
+</head>
+<body>
+    <div id="id_disp">
+        <h1>주말에 모했나용?</h1>
+    </div>
+    <input id = "id_button" type="button" value="안보이깅" onclick="f_showhidden1()">
+    <script>
+        // toggle을 못하는 자 -> 주말에 쉴 자격이 없다.
+        //  버튼을 누르면 보였다 안보이깅
+        var v_disp = document.getElementById("id_disp");
+        var v_bu = document.getElementById("id_button");
+        var i = true; // 초기값
+        function f_showhidden() {
+            if(i){
+                v_disp.style.visibility ="hidden";
+                i= false;
+                v_bu.value ="보이깅";
+                return; // function 종료 기능
+            }
+            v_disp.style.visibility="visible";
+            i=true;
+            v_bu.value ="안보이깅";
+            
+            // setTimeout(f_showhidden,500)
+        }
+        // 이런코드는 좋지 않음, 코드가 버튼의 value 값을 의존성을 가졌기에 value값이 변경된다면 코드도 변경 해야 한다.
+        function f_showhidden1() {
+            if(v_bu.value== "안보이깅"){
+                v_disp.style.visibility ="hidden";
+                v_bu.value ="보이깅";
+            }else{
+                v_disp.style.visibility="visible";
+                v_bu.value ="안보이깅";
+            }
+        }
+        </script>
+</body>
+</html>

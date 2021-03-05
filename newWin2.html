@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    메세지 <input id = "id_txt" type="text" value=""><br>
+    <input id = "id_btn" type="button" value="전달">
+   
+    <script>
+       
+        var v_btn = document.getElementById("id_btn");
+        var v_txt = document.getElementById("id_txt");
+        function f_clk(){
+           opener.parent.frames[3].document.getElementById("id_txt").value =v_txt.value;
+           //오픈창(프레임의첫번쩨)의 부모의 마지막 프레임
+        }
+        v_btn.onclick= f_clk
+    </script>
+</body>
+</html>

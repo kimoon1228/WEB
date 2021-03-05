@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="바탕화면색 랜덤하게 0.3초마다 바뀌기" onclick="f_rancolor()">
+    <script>
+        var v_16 = [];
+        for(var i= 0; i<=9; i++){
+            v_16[v_16.length]= ""+i;
+        }
+        v_16[v_16.length] = 'a';
+        v_16[v_16.length] = 'b';
+        v_16[v_16.length] = 'c';
+        v_16[v_16.length] = 'd';
+        v_16[v_16.length] = 'e';
+        v_16[v_16.length] = 'f';
+        function f_16rancolor() {
+            var v_re ="#"
+            // 16진수 랜덤한 color값 리턴하도록 작성 retrun "#555555"
+            for(var j=1; j<=6; j++){
+                v_re += v_16[Math.floor(Math.random()*v_16.length)];
+            }           
+           return v_re 
+        }
+        function f_rgbrancolor() {
+            // rgb 함수를 이용하여 랜덤한 칼라값 리턴 하도록 작성 retrun "rgb(255,255,0)"
+            var re ="rgb("
+            var v_rgb = [];
+            for(var i= 0; i<3;i++){
+                v_rgb[v_rgb.length]=Math.floor(Math.random()*256);
+            }
+           re += v_rgb+")" //+=이랑 =+ 구별하기
+            return re
+        }
+        function f_rancolor() {
+           document.body.style.backgroundColor= f_rgbrancolor(); // boby 태그는 문서에 오직 한번만 나와야 하기에 id값을 주지 않아도 boby태그에 접근 가능
+            setTimeout(f_rancolor,300);
+        }
+    </script> 
+</body>
+</html>l

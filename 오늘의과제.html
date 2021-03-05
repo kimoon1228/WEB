@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 과제</title>
+</head>
+<body>
+    <script>
+        alert(document.getElementById("id_img"));
+    </script>
+    <img id = "id_img" src="./images/47b82cccfb62e78d71b1590e32a57e5e617ea012db208c18f6e83b1a90a7baa7.png" width="300" height="300"<br>
+    <input type="button" value="<" onclick="f_pre()">
+    <input type="button" value=">" onclick="f_next()">
+<script>
+    // script는 일반적으로 body 태그 위에 넣음
+    // 순서에 영향을 받기 때문에 일부러 가장 아래쪽에 넣는 것임
+    // script태그는 몇번이 와도 되고 어디에 놔도 상관 없으나 
+    var v_imgs = ["47b82cccfb62e78d71b1590e32a57e5e617ea012db208c18f6e83b1a90a7baa7.png","o-PEPE-THE-FROG-570.jpg","y8hfb1bf61czzvoru310.jpg",
+                "images.jpeg","img.jpg"]
+                var i = 0;
+                var f_img = document.getElementById("id_img");
+                function f_pre(){
+                  i = i-1 ;    
+                  if(i<0){
+                      i=v_imgs.length-1;
+                    }
+                    f_img.src = "./images/"+v_imgs[i];
+                }
+    function f_next(){
+        i= i+1;
+        if(i==v_imgs.length){
+            i=0;
+        }
+        f_img.src = "./images/"+v_imgs[i];
+    }
+
+</script>
+</body>
+</html>

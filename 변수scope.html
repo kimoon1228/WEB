@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<script>
+    //  자바스크립트에서 변수 스코프(범위)
+    // 전역변수/지역변수, 기억합니다. function기준
+    // function 안에 선언 되었으면 지역변수, {}랑은 관계없음
+
+    var v_global = "전역변수";
+    function f_scope(){
+        var v_global = "누구냐";
+    }
+    f_scope();
+    alert(v_global);
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script>
+    /*
+    자바 스크립트 에서는 문자열 변수에 . 을 찍어서 속성이나 메소드를 사용하는 순간 원시타입(prototype) 문자열이 문자열 객체로 자동변환됨
+    */
+   var v_str = "                   Hello String                  ";
+//    alert(v_str.length);
+//    alert(v_str.charAt(11));
+//    alert(v_str[11]);
+
+//  v_str[2] = 'K'; alert(v_str);// 원시타입 데이터는 일부분만 수정 할 수 없음
+
+//  alert(v_str.indexOf("ing")); // v_str안에 문자열이 있는지 찾아라 , 못찾으면 -1 true 값 0만 false
+
+//    v_str.replace("Hello","Hi^-^"); //replace는 원본을 바꾸지 않는다
+//    v_str = v_str.replace("Hello","Hi^-^"); // 원본을 덮어 써줘야 한당
+//     alert("원본"+v_str);
+
+    // var v_arr= v_str.split(" "); // retrun 값이 배열이다.. 원본을 바꾸지 못한다.
+    // for(var i= 0; i<v_arr.length; i++){
+    //     alert(v_arr[i])}
+
+    // alert(v_str.substr(1)); // 원본을 건들지 않고 설정값 추출 리턴
+
+    // alert("체크"+v_str+"체크")// 공백확인
+    // alert("체크"+v_str.trim()+"체크") // 앞뒤 공백제거
+    
+        var v_str2 = "박태환 악마 박태환 악마 박태환 앙마 악마 악마";
+    //     if(v_str2.indexOf("악마")!=-1){
+    //     for (var i= 0; i<v_str2.indexOf("악마"); i++) {
+    //         v_str2 = v_str2.replace("악마","천사");
+    //     }
+    // } 
+
+    
+         for (;v_str2.indexOf("악마")!=-1;) {
+          v_str2 = v_str2.replace("악마","천사");
+         }
+         
+        function replaceAlll(p_str,p_won,p_rep) {
+            for(;p_str.indexOf(p_won)!=-1;){
+                p_str = p_str.replace(p_won,p_rep);
+        }
+            return p_str   
+        }
+        alert(replaceAlll("안농 안넝 안농 안넝 히히히 ","농","냥"))
+
+
+
+</script>

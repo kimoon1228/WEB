@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택박스(콤보박스)</title>
+</head>
+<body>
+    <!-- 모바일에서 select를 체크박스 대용으로 사용되고 있다 -->
+    <select id ="id_sel" multiple size=5 onchange="f_chg()">
+        <option value="0">선택하세요</option>
+        <option value="osh">오성현</option> 
+        <option value="jcw">정찬웅</option>
+        <option value="jyh">주영흔</option>
+        <option value="lyh">이윤행</option>
+    </select>
+    <script>
+        var v_sel = document.getElementById("id_sel");
+          var v_opts = v_sel.options
+        function f_chg(){
+            // alert("선택하신 값은"+v_sel.value+"입니다");
+            //  항상 이런 형태로만 사용되다 보니, 위와 같이 간단한 접근법이 제공됨
+            var v_selval = [];
+            for(var i=0; i<v_opts.length; i++){
+            if(v_opts[i].selected){
+                v_selVal[v_selVal.length]= v_opts[i].value;
+                break;
+        }
+    }   alert("선택하신 값은"+v_sel.value+"입니다");
+        }
+    </script>
+</body>
+</html>

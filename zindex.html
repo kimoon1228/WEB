@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position:absolute;
+            width: 150px;
+            height: 150px;
+            border: 3px solid black;
+        }
+        #id_pth{
+            /* background-color: rgb(132, 184, 97); #ffffff 2의 20승 곱하기 2의 4승 */
+            /* background-color : #ff0000;  16진수 표기법 -- f00 두개 값이 같으면 하나를 생략해서 쓸수 있다.*/
+            /* background-color: rgba(red, green, blue, alpha); alpha-- 투명도 0~1사이의 값을 쓸수 있다.*/
+            background-color: royalblue;
+            z-index: 272;
+        }
+        #id_osh{
+            left:50px;
+            top: 50px;
+            background-color: rgb(red, green, blue);
+            z-index: 337;
+        }
+        #id_sib{
+            left: 100px;
+            top : 100px;
+            background-color: black;
+            color: yellow;
+            z-index: 400;
+        }
+        #id_yhj{
+            left: 150px;
+            top : 150px;
+            background-color: magenta;
+            z-index: 999;
+        }
+        input{
+            position: relative;
+            top :300px;
+        }
+    </style>
+</head>
+<body>
+    <div id ="id_pth">박태환</div>
+    <div id ="id_osh">오성현</div>
+    <div id ="id_sib">송인범</div>
+    <div id ="id_yhj">염호준</div>
+    <input type="button" value="레이어순서" onclick="f_zindex()">
+    <script>
+        var v_pth= document.getElementById("id_pth");
+        function f_zindex() {
+            // 스크립트에서 -(하이픈)은 -(산술연산 빼기)로 인식하기 때문에 -을 빼고 다음글자를 대문자로 쓴다
+            v_pth.style.zIndex ="9999";
+            v_pth.style.backgroundColor = "green";
+            
+        }
+    </script>
+</body>
+</html>

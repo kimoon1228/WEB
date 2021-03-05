@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script>
+    // javascript 데이타 타입
+    "use strict" // 맨첫줄에 써주면 좋음
+   var v_num = 234; // 숫자(Number)형
+  //  alert(typeof(v_num)); // typeof 데이터 타입이 뭔지 알려주는 함수
+    var v_str = "남기문"; // 문자열(String)형
+  //  alert(v_str);
+    var v_bool = true; //  논리형(boolean) true, false
+    var v_null = null; // null, 아직 초기화 되지 않았다는 표시 
+    var v_array = ["이윤행","김지원","염호준",true, 254, ["토레타","착한수분"]]; // 배열
+    // 자바스크립트 배열은 제약사항이 없음 
+    // alert(v_array[5][1]);
+    var v_json = {"name":"김태정"
+                ,"age":"묻지망"
+                ,"friend":["장두언","윤가영","주영흔",{"aa":'흥',"bb":"칫"}]
+                }; // JSON(JavaScript Object Notation) Map
+    // alert("내가 젤 좋아하는"+v_json.friend[2].bb);
+                // alert(v_json.name);
+                // alert(v_json.age);
+                // 위와 동일    
+                // alert(v_json["name"]);
+                // alert(v_json["age"]);
+
+var v_undefined;    // undefined 초기화 하지 않으면 자동으로 undefined)
+                alert (v_undefined);
+</script>

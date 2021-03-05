@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<script>
+    // call by value, call by reference (값의 복사, 값의 참조)
+    /*
+    var v_value = "값";
+    function f_chg(p_arg){ // 복사 방식으로 동작, 원본데이터에 접근하지 못함
+        p_arg = "졸려";
+        alert(p_arg);
+    }
+    f_chg(v_value)
+    alert(v_value);
+    */
+   
+      // 복사와 참조를 결정 짓는 것 데이터 타입
+      // 원시타입(Primitive)은(숫자형, 문자열형) 복사, 객체 타입은 참조(배열,JSON)
+   var v_arr = ["한석규","심이안","김소민"];
+   function f_chg(p_arg){ // 참조 방식으로 동작 가리키는곳이 똑같은것
+       p_arg[1] = "이안심 짱";
+   }
+   f_chg(v_arr);
+   alert(v_arr);
+</script>

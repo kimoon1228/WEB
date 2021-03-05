@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #id_what{
+             overflow: hidden; /*부모영역을 벗어난 자식 잘라내기 */
+            position: relative;
+            left: 100px;
+            top: 100px;
+            width: 200px;
+            height: 200px;
+             /* border: 1px solid black;   */
+             transform: rotate(45deg);
+             transform-origin: left top;
+             
+        }
+        .cl_common{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            background-color: plum;
+        }
+        .cl_one{
+            left: 100px;
+        }
+        .cl_two{
+            top:100px;
+        }
+        .cl_bar{
+            position: absolute;
+            left: 85px;
+            width: 30px;
+            height: 200px; /* 높이 꽉차게*/
+            background-color: plum;
+            transform: rotate(-45deg);
+        }
+        .cl_ra{
+            position: absolute;
+            left:auto;
+            width: 50px;
+            height: 50px;
+            border-radius: 100px;
+            background-color: plum;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id = "id_what">
+        <div class = "cl_ra"></div>
+        <div class = "cl_bar"></div>
+        <div class = "cl_one cl_common"></div>
+        <div class = "cl_two cl_common"></div>
+    </div>
+    <script>
+        var v_what= document.getElementById("id_what")
+        var v_gak =45;
+        var v_gakinc =5;
+        function f_gak(){
+            v_gak= v_gak+v_gakinc
+            if(v_gak>=90){
+                v_gakinc=-5
+            }else if(v_gak==0){
+                v_gakinc=5
+            }
+            v_what.style.transform = "rotate("+v_gak+"deg)";
+            setTimeout(f_gak,100)
+        }
+
+        window.onload= function(){
+            f_gak();
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버튼을 만든다.</title>
+    <style>
+        /* #id_disp는 css선택자   */
+    #id_disp{
+            width: 300px;
+            height: 300px;
+            border: 10px solid aquamarine;
+    }    
+    </style>
+    
+</head>
+<body>
+    <!-- 꼭 기억합니다 . 태그 사이의 값에 접근하는 속성 innerHTML -->
+    <div id = "id_disp"> 이윤행 
+            <img id ="id_img" src="./images/images.jpeg" width="100px" height="100px">
+    </div>
+    <input type = "button" value="버튼이다." onclick="f_click()">
+    <script>
+        function f_click(){
+            // 자바스크립트 에서 id 값을 이용해서 태그 객체 접근
+            //document는 html문서 객체를 가리킴(키워드)
+            var v_disp = document.getElementById("id_disp");
+            var v_img = document.getElementById("id_img");
+            v_img.width =300;
+            v_img.height=200;
+            v_img.src ="./images/img.jpg"
+            console.log(v_img);
+            console.log(v_disp.innerHTML); 
+            v_disp.innerHTML += "10가지 과채의 착한 수분";
+        }
+    </script>
+</body>
+</html>

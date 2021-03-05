@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* *은 모든의 의미*/
+        *{
+            margin: 0;
+        }
+        #container{
+            margin: 0 auto; /* 일반 적인 수평 중앙 정렬 방법*/
+            width :500px;
+            height: 95vh;
+            border: 1px solid black;
+            text-align: center; /* 내용 수평 가운데 정렬*/
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        일반적으로 레이아웃 잡을 때 화면 전체를 잡는 div 태그를 주고 
+        그것의 id 나 class를 container라는 이름으로 많이줌
+     -->
+    <div id = "container">
+        <script>
+            for(var i=1; i<=6; i++){
+                document.write("<h"+i+">난 최고의 프로그래머당!</h"+i+">")
+            }
+            for(var i=5; i>=1; i--){
+                document.write("<h"+i+">난 최고의 프로그래머당!</h"+i+">")
+            }
+            
+            // 오늘의 과제 위 for문 2개를 for 한번만 사용해서 같은 결과가 나오도록
+            // 추가적인 조건문등의 사용은 관계 없습니다.
+            var v_direction = "up"; // 증가와 감소가 있음. Toggle(토글) 버튼 같은 느낌
+
+            for(var i=1; i>=1&&i<=6;){
+                document.write("<h"+i+">난 최고의 프로그래머당!</h"+i+">")
+                if(i==6){
+                    v_direction = "down";
+                }
+                if (v_direction == "up"){
+                    i++;
+                } else{
+                    i--;
+                }
+            }
+          /*  var j= 0;
+           for(var i= 1; i<=11; i++ ){
+              if(j<6){
+                j++;
+            }if(j>6){
+                j--;
+            }
+            document.write("<h"+j+">난 최고의 프로그래머당!</h"+j+">")
+        }
+    
+        */
+        </script>
+    </div>
+</body>
+</html>

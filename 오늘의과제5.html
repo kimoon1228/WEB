@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        #container{
+            margin: 0 auto; 
+            width: 300px;
+            border: 10px groove black;
+        }
+        #id_cen{
+            text-align: center;
+            display: none;
+            background-image: url(./images/b.jpeg) ;
+            background-size: 50%;
+            width: 300px;
+            height: 600px;
+        }
+        h1{
+            margin: 0px;
+            color: red;
+        }
+        h3{
+            background-color: black;
+            color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <div id ="container">
+        <div id = "id_cen">
+            <h1>공지 사항</h1><hr>
+            <h3> 나는 최고의 프로그래머당당당당</h3>
+            <h3>안되는건 없다 내가 모를뿐...</h3>
+            <h3>더 많이 배우자</h3>
+        </div>
+    </div>
+    <script>
+        var v_cont = document.getElementById("container");
+        var v_cen = document.getElementById("id_cen");
+        
+        function f_large() {
+            if(!v_cont.style.height){
+                v_cont.style.height = "0px";
+            }
+            v_cont.style.height = parseInt(v_cont.style.height)+10+"px";
+            if(parseInt(v_cont.style.height)>=600){
+                v_cen.style.display="block";
+                retrun; // 함수 종료
+            }
+         setTimeout(f_large,50);
+        }
+        f_large()
+    </script>
+</body>
+</html>
